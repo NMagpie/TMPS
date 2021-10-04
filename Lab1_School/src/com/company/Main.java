@@ -30,6 +30,5 @@ public class Main {
         schoolClass.getSchoolClass();
         testPaper.getTestPaper();
 
-
     }
 }

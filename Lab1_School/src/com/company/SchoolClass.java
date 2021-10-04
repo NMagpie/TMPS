@@ -37,10 +37,9 @@ public class SchoolClass {
 
     public void getSchoolClass(){
         System.out.println("\n" + "Class ID: " + id);
-        System.out.print("    ");
         teacher.getHuman();
         for (int i = 0; i < numberOfStudents; i++) {
-             System.out.print("    ");
+             System.out.print("\n");
              students.get(i).getHuman();
         }
     }

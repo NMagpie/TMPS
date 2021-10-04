@@ -5,7 +5,7 @@ public class Admin {
 
     public Humans createSchoolStructure(String typeOfHuman){
         switch (typeOfHuman){
-            case "Student" : return new Student.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000 ).build() ;
+            case "Student" : return new Student.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000 ).build();
             case "Teacher" : return new Teacher.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000).build();
             default: return null;
         }
@@ -13,10 +13,14 @@ public class Admin {
 
     public SchoolClass createClass (int numberOfStudents){
         SchoolClass schoolClass = new SchoolClass();
-        schoolClass.setTeacher(new Teacher.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000).setClassID(schoolClass.getId()).build());
+        schoolClass.setTeacher(new Teacher.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000)
+                .setClassID(schoolClass.getId())
+                .build());
 
         for (int i = 0; i < numberOfStudents; i++) {
-            schoolClass.addStudent(new Student.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000 ).setClassID(schoolClass.getId()).build());
+            schoolClass.addStudent(new Student.Builder(names[(int) (Math.random()*25)], (int) (Math.random()*999999999) + 10000000 )
+                    .setClassID(schoolClass.getId())
+                    .build());
         }
         return schoolClass;
     }

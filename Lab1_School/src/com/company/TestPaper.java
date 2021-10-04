@@ -31,9 +31,9 @@ public class TestPaper implements Cloneable {
         if (Theme == null && Tasks == null)
             System.out.println("There is not such test!");
         else if (ClassID == -1)
-            System.out.println("\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nTheme: " + Theme + "\nTasks" + Tasks);
+            System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
         else
-            System.out.println("\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nClassID: " + ClassID + "\nTheme: " + Theme + "\nTasks" + Tasks);
+            System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nClassID: " + ClassID + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
     }
 
     static class Builder{
