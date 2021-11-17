@@ -1,4 +1,4 @@
-package com.company;
+package com.company.paper;
 
 public class TestPaper implements Cloneable {
     private final int id = count++;

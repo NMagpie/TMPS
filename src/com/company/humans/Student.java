@@ -1,4 +1,6 @@
-package com.company;
+package com.company.humans;
+
+import com.company.paper.TestPaper;
 
 public class Student implements Humans {
     private String name;

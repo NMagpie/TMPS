@@ -1,6 +1,8 @@
-package com.company;
+package com.company.humans;
 
-public class Teacher implements Humans{
+import com.company.paper.TestPaper;
+
+public class Teacher implements Humans {
     private String name;
     private int phone;
     private final int id = count++;

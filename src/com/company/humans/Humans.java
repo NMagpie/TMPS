@@ -1,4 +1,6 @@
-package com.company;
+package com.company.humans;
+
+import com.company.paper.TestPaper;
 
 public interface Humans {
     int getId();
@@ -6,6 +8,6 @@ public interface Humans {
     int getPhone();
     void getHuman();
     int getClassID();
-    TestPaper createTestPaper(String Theme,String Task);
+    TestPaper createTestPaper(String Theme, String Task);
     void setTestPaper(TestPaper testPaper1);
 }

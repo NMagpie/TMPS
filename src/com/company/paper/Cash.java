@@ -1,4 +1,6 @@
-package com.company;
+package com.company.paper;
+
+import com.company.paper.TestPaper;
 
 public class Cash {
     TestPaper testPaper;

@@ -1,4 +1,6 @@
-package com.company;
+package com.company.humans;
+
+import com.company.schoolclass.SchoolClass;
 
 public class Admin {
     private final String[] names = new String[]{"John", "Monkey", "Li", "Dinara", "Artem", "Elina", "Liam", "Olivia", "Noah", "Emma", "Oliver","Ava", "William", "Sophia", "Elijah", "Isabella", "James", "Charlotte", "Benjamin", "Amelia", "Lucas", "Mia", "Mason", "Harper", "Ethan", "Evelyn"};

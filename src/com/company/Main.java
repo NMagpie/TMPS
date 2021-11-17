@@ -1,5 +1,11 @@
 package com.company;
 
+import com.company.humans.Admin;
+import com.company.humans.Humans;
+import com.company.paper.Cash;
+import com.company.paper.TestPaper;
+import com.company.schoolclass.SchoolClass;
+
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {

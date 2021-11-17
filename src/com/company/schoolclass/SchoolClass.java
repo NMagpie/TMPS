@@ -1,4 +1,6 @@
-package com.company;
+package com.company.schoolclass;
+
+import com.company.humans.Humans;
 
 import java.util.ArrayList;
 
