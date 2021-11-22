@@ -1,9 +1,7 @@
-package com.company.paper;
-
-import com.company.paper.TestPaper;
+package paper;
 
 public class Cash {
-    TestPaper testPaper;
+    private TestPaper testPaper;
 
     public TestPaper getTestPaper() throws CloneNotSupportedException {
         return testPaper.clone();

@@ -1,10 +1,8 @@
-package com.company;
-
-import com.company.humans.Admin;
-import com.company.humans.Humans;
-import com.company.paper.Cash;
-import com.company.paper.TestPaper;
-import com.company.schoolclass.SchoolClass;
+import humans.Admin;
+import humans.Humans;
+import paper.Cash;
+import paper.TestPaper;
+import schoolclass.SchoolClass;
 
 public class Main {
 
@@ -20,10 +18,6 @@ public class Main {
         Humans teacher = admin.createSchoolStructure("Teacher");
         SchoolClass schoolClass = admin.createClass(10);
 
-        System.out.println("\n");
-        student.getHuman();
-        System.out.println("\n");
-        teacher.getHuman();
         TestPaper testPaper = teacher.createTestPaper(Theme,Task);
         Cash cash = new Cash();
         cash.setTestPaper(testPaper);
@@ -33,8 +27,12 @@ public class Main {
             classStudent.setTestPaper(testPaperPrototype);
         }
 
-        schoolClass.getSchoolClass();
+        schoolClass.getProjectorRemote().turnOn();
+
         testPaper.getTestPaper();
+
+        admin.remove(teacher);
+        admin.getHumans();
 
     }
 }

@@ -1,10 +1,11 @@
-package com.company.humans;
+package humans;
 
-import com.company.paper.TestPaper;
+import paper.TestPaper;
 
 public class Student implements Humans {
+    private String indicate = "Student";
     private String name;
-    private int phone;
+    private final int phone;
     private final int id = count++;
     private int ClassID;
     private TestPaper testPaper;
@@ -21,7 +22,6 @@ public class Student implements Humans {
     public int getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
@@ -38,20 +38,22 @@ public class Student implements Humans {
         this.testPaper = testPaper;
     }
 
+    public String getIndicate() {
+        return indicate;
+    }
+
     @Override
     public TestPaper createTestPaper(String Theme, String Task) {
         return null;
     }
 
     public void getHuman() {
-        if (ClassID == -1 && testPaper == null)
-            System.out.println("Student ID: " + id + "\nName: " + name + "\nPhone: " + phone);
-        else if (ClassID != -1 && testPaper ==null)
-            System.out.println("Student ID: " + id + "\nName: " + name + "\nPhone: " + phone + "\nClassID:" + ClassID);
-        else if (ClassID ==-1 && testPaper != null)
-            System.out.println("Student ID: " + id + "\nName: " + name + "\nPhone: " + phone + "\nTestID:" + testPaper.getId());
-        else
-            System.out.println("Student ID: " + id + "\nName: " + name + "\nPhone: " + phone + "\nClassID:" + ClassID + "\nTestID:" + testPaper.getId());
+        System.out.print("\nStudent ID: " + id + "\nName: " + name + "\nPhone: " + phone);
+        if (ClassID != -1)
+            System.out.print("\nClassID: " + ClassID);
+        if (testPaper != null)
+            System.out.print("\nTestID: " + testPaper.getId());
+        System.out.println();
     }
 
     static class Builder{

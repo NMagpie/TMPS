@@ -1,6 +1,6 @@
-package com.company.humans;
+package humans;
 
-import com.company.paper.TestPaper;
+import paper.TestPaper;
 
 public interface Humans {
     int getId();
@@ -10,4 +10,5 @@ public interface Humans {
     int getClassID();
     TestPaper createTestPaper(String Theme, String Task);
     void setTestPaper(TestPaper testPaper1);
+    String getIndicate();
 }

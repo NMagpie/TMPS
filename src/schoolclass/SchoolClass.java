@@ -1,14 +1,18 @@
-package com.company.schoolclass;
+package schoolclass;
 
-import com.company.humans.Humans;
+import equipment.Projector;
+import equipment.Remote;
+import humans.Humans;
 
 import java.util.ArrayList;
 
 public class SchoolClass {
     private int numberOfStudents = 0;
     private Humans teacher = null;
-    ArrayList <Humans> students = new ArrayList<>();
+    private ArrayList <Humans> students = new ArrayList<>();
     private final int id = count++;
+    private Projector projector = new Projector();
+    private Remote projectorRemote = new Remote(projector);
 
     private static int count=0;
 
@@ -44,5 +48,13 @@ public class SchoolClass {
              System.out.print("\n");
              students.get(i).getHuman();
         }
+    }
+
+    public Projector getProjector() {
+        return projector;
+    }
+
+    public Remote getProjectorRemote() {
+        return projectorRemote;
     }
 }
