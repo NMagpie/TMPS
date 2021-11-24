@@ -1,4 +1,4 @@
-package com.company.paper;
+package paper;
 
 public class TestPaper implements Cloneable {
     private final int id = count++;
@@ -36,7 +36,7 @@ public class TestPaper implements Cloneable {
             System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nClassID: " + ClassID + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
     }
 
-    static class Builder{
+    public static class Builder{
         private String teacherName;
         private final int Duration =45;
         private int ClassID;

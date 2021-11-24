@@ -1,8 +1,9 @@
-package com.company.humans;
+package humans;
 
-import com.company.paper.TestPaper;
+import paper.TestPaper;
 
 public class Teacher implements Humans {
+    private String indicate = "Teacher";
     private String name;
     private int phone;
     private final int id = count++;
@@ -33,10 +34,14 @@ public class Teacher implements Humans {
     }
 
     public void getHuman() {
-        if (ClassID == -1)
-            System.out.println("Teacher ID: " + id + "\nName: " + name + "\nPhone: " + phone);
-        else
-            System.out.println("Teacher ID: " + id + "\nName: " + name + "\nPhone: " + phone + "\nClassID:" + ClassID);
+        System.out.print("\nTeacher ID: " + id + "\nName: " + name + "\nPhone: " + phone);
+        if (ClassID != -1)
+        System.out.print("\nClassID:" + ClassID);
+        System.out.println();
+    }
+
+    public String getIndicate() {
+        return indicate;
     }
 
     public TestPaper createTestPaper (String Theme, String Task){
