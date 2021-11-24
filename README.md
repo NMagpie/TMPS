@@ -87,7 +87,7 @@ public class Cash {
 
 ![Result3](https://user-images.githubusercontent.com/6358475/135904280-b315a6bd-c82c-44aa-96e3-31399f9cdf2c.png)
 
-- ### Main file
+- ### main file
 
 ![Result4](https://user-images.githubusercontent.com/6358475/135904500-f8a1f0bc-71db-4437-ae83-66efddb9bdb3.png)
 
