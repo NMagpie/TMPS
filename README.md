@@ -187,6 +187,10 @@ There is a Class called `PrincipalToTeacher` which, if it is needed can turn the
 
 ![school](https://user-images.githubusercontent.com/6358475/143414558-1b4affbe-1c2e-47d1-a13c-69cfed262949.PNG)
 
+- ### PrincipalToTeacher (Adapter) full code
+
+![adapter](https://user-images.githubusercontent.com/6358475/143416325-d3b1ab87-256c-42d1-92d8-10494b240896.PNG)
+
 - ### Partial output in the command line
 
 ![output](https://user-images.githubusercontent.com/6358475/143415079-f3e089a1-6b2e-4258-bd62-5f1e8d5ae4b1.PNG)
