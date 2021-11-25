@@ -38,10 +38,14 @@ public class School {
     }
 
     public void turnOnClassProjector(int index) {
-        classes.get(index).getProjectorRemote().turnOn();
+        SchoolClass schoolClass = classes.get(index);
+        System.out.println("Class " + schoolClass.getId() + ":");
+        schoolClass.getProjectorRemote().turnOn();
     }
 
     public void turnOffClassProjector(int index) {
+        SchoolClass schoolClass = classes.get(index);
+        System.out.println("Class " + schoolClass.getId() + ":");
         classes.get(index).getProjectorRemote().turnOff();
     }
 
@@ -74,7 +78,9 @@ public class School {
     }
 
     public void teacherAction(int index) {
-        classes.get(index).getTeacher().action();
+        SchoolClass schoolClass = classes.get(index);
+        System.out.println("Class " + schoolClass.getId() + ":");
+        schoolClass.getTeacher().action();
     }
 
     public void showClass(int index) {

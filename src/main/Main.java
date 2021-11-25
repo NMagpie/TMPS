@@ -34,7 +34,7 @@ public class Main {
 
         school.createClassTest(2, theme, task);
 
-        school.showClassTest(2);
+        //school.showClassTest(2);
 
         school.setPrincipalInClass(1);
 
