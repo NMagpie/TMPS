@@ -14,6 +14,8 @@ public interface Humans {
 
     int getClassID();
 
+    TestPaper getTestPaper();
+
     TestPaper createTestPaper(String Theme, String Task);
 
     void setTestPaper(TestPaper testPaper1);

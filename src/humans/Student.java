@@ -30,9 +30,12 @@ public class Student implements Humans {
     public int getClassID() {
         return ClassID;
     }
+
+    @Override
     public TestPaper getTestPaper() {
         return testPaper;
     }
+
     public void setTestPaper(TestPaper testPaper) {
         this.testPaper = testPaper;
     }

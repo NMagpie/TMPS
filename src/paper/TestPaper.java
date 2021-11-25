@@ -34,6 +34,7 @@ public class TestPaper implements Cloneable {
             System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
         else
             System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nClassID: " + ClassID + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
+        System.out.println();
     }
 
     public static class Builder{

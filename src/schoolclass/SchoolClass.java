@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class SchoolClass {
     private int numberOfStudents = 0;
-    private Teacher teacher = null;
+    private Humans teacher = null;
     private final ArrayList <Humans> students = new ArrayList<>();
     private final int id = count++;
     private final Projector projector = new Projector();
@@ -34,7 +34,7 @@ public class SchoolClass {
         teacher.getHuman();
     }
 
-    public Teacher getTeacher(){
+    public Humans getTeacher(){
         return teacher;
     }
 

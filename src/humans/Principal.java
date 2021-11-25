@@ -4,7 +4,7 @@ import schoolclass.SchoolClass;
 
 import java.util.ArrayList;
 
-public class Admin {
+public class Principal {
 
     private final ArrayList<Humans> students = new ArrayList<>();
     private final ArrayList<Humans> teachers = new ArrayList<>();
@@ -69,6 +69,14 @@ public class Admin {
             students.remove(human.getId());
         if (Teacher.class.equals(human.getClass()))
             teachers.remove(human.getId());
+    }
+
+    public void action() {
+        System.out.println("Principal: \"I'm administrating!\"");
+    }
+
+    public String[] getNames() {
+        return names;
     }
 
 }

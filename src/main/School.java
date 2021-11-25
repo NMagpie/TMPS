@@ -1,7 +1,8 @@
 package main;
 
-import humans.Admin;
+import humans.Principal;
 import humans.Humans;
+import humans.PrincipalToTeacher;
 import paper.Cash;
 import paper.TestPaper;
 import schoolclass.SchoolClass;
@@ -14,7 +15,7 @@ public class School {
 
     private ArrayList<SchoolClass> classes = new ArrayList<>();
 
-    private Admin schoolAdmin = new Admin();
+    private Principal schoolAdmin = new Principal();
 
     public String getSchoolName() {
         return schoolName;
@@ -66,6 +67,14 @@ public class School {
     public void showClasses() {
         for (SchoolClass schoolClass: classes)
             schoolClass.getSchoolClass();
+    }
+
+    public void setPrincipalInClass(int index) {
+        classes.get(index).setTeacher(new PrincipalToTeacher(schoolAdmin));
+    }
+
+    public void teacherAction(int index) {
+        classes.get(index).getTeacher().action();
     }
 
     public void showClass(int index) {

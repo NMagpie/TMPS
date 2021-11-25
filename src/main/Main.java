@@ -36,5 +36,9 @@ public class Main {
 
         school.showClassTest(2);
 
+        school.setPrincipalInClass(1);
+
+        school.teacherAction(1);
+
     }
 }
