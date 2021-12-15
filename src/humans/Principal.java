@@ -1,10 +1,5 @@
 package humans;
 
-<<<<<<< HEAD
-=======
-import schoolclass.SchoolClass;
-
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 import java.util.ArrayList;
 
 public class Principal {
@@ -51,10 +46,7 @@ public class Principal {
                 .setName(names[(int) (Math.random()*25)])
                 .setPhone((int) (Math.random()*999999999) + 10000000)
                 .setClassID(schoolClass.getId())
-<<<<<<< HEAD
                 .setChat(schoolClass.getChat())
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
                 .build());
 
         for (int i = 0; i < numberOfStudents; i++)
@@ -62,10 +54,7 @@ public class Principal {
                     .setName(names[(int) (Math.random()*25)])
                     .setPhone((int) (Math.random()*999999999) + 10000000)
                     .setClassID(schoolClass.getId())
-<<<<<<< HEAD
                     .setChat(schoolClass.getChat())
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
                     .build());
 
         students.addAll(schoolClass.getStudents());

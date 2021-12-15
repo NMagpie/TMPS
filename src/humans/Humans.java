@@ -21,11 +21,8 @@ public interface Humans {
     void setTestPaper(TestPaper testPaper1);
 
     void action();
-<<<<<<< HEAD
 
     public void sendMessage(String message);
 
     public void getMessage(String message);
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 }

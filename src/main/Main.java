@@ -1,13 +1,10 @@
 package main;
 
-<<<<<<< HEAD
 import humans.Iterator;
 import humans.SchoolClass;
 import humans.Student;
 import humans.TaskChat;
 
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -48,7 +45,6 @@ public class Main {
 
         school.teacherAction(1);
 
-<<<<<<< HEAD
         SchoolClass schoolClass = school.getClass(2);
 
         schoolClass.getTeacher().sendMessage("№1\n2+2=_\n№2 \n2*2=_");
@@ -59,7 +55,5 @@ public class Main {
             student.sendMessage("№1 4 №2 4");
         }
 
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     }
 }

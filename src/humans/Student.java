@@ -61,7 +61,6 @@ public class Student implements Humans {
         System.out.println("Student " + name + ": \"I'm studying!\"");
     }
 
-<<<<<<< HEAD
     @Override
     public void sendMessage(String message) {
         chat.sendMessage(message,this);
@@ -72,8 +71,6 @@ public class Student implements Humans {
         System.out.println("Student " + name + " - " + "Solution:" + message);
     }
 
-=======
->>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     static class Builder {
         private String name;
         private int phone;
