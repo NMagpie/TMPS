@@ -1,8 +1,17 @@
 package main;
 
+<<<<<<< HEAD
 import humans.*;
 import paper.Cash;
 import paper.TestPaper;
+=======
+import humans.Principal;
+import humans.Humans;
+import humans.PrincipalToTeacher;
+import paper.Cash;
+import paper.TestPaper;
+import schoolclass.SchoolClass;
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 
 import java.util.ArrayList;
 
@@ -65,6 +74,7 @@ public class School {
         classes.get(index).getTeacher().getTestPaper().getTestPaper();
     }
 
+<<<<<<< HEAD
     public SchoolClass getClass(int index){
         return classes.get(index);
     }
@@ -72,6 +82,11 @@ public class School {
     public void showClasses() {
         for (SchoolClass schoolClass: classes)
             schoolClass.getSchoolClass(schoolClass);
+=======
+    public void showClasses() {
+        for (SchoolClass schoolClass: classes)
+            schoolClass.getSchoolClass();
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     }
 
     public void setPrincipalInClass(int index) {
@@ -85,7 +100,11 @@ public class School {
     }
 
     public void showClass(int index) {
+<<<<<<< HEAD
         classes.get(index).getSchoolClass(classes.get(index));
+=======
+        classes.get(index).getSchoolClass();
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     }
 
     public void showPeopleList() {

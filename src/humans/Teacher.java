@@ -8,7 +8,10 @@ public class Teacher implements Humans {
     private final int id = count++;
     private int ClassID;
     private TestPaper testPaper;
+<<<<<<< HEAD
     private TaskChat chat;
+=======
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 
     private static int count = 0;
 
@@ -16,7 +19,10 @@ public class Teacher implements Humans {
         this.name = builder.name;
         this.phone = builder.phone;
         this.ClassID = builder.ClassID;
+<<<<<<< HEAD
         this.chat = builder.chat;
+=======
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     }
 
     public int getId() {
@@ -60,6 +66,7 @@ public class Teacher implements Humans {
         System.out.println("Teacher " + name + ": \"I'm teaching!\"");
     }
 
+<<<<<<< HEAD
     @Override
     public void sendMessage(String message) {
         chat.sendMessage(message,this);
@@ -70,20 +77,28 @@ public class Teacher implements Humans {
         System.out.println("Teacher " + name + " - " + "Homework: " + message);
     }
 
+=======
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
     static class Builder {
         private String name;
         private int phone;
         private int ClassID = -1;
+<<<<<<< HEAD
         private TaskChat chat = null;
+=======
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
 
         public Builder (){
         }
 
+<<<<<<< HEAD
         public Builder setChat (TaskChat chat) {
             this.chat = chat;
             return this;
         }
 
+=======
+>>>>>>> 9a42c31eeaa4e7699b9ee94fa135f451e90a1664
         public Builder setClassID(int classID) {
             this.ClassID = classID;
             return this;
