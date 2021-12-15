@@ -3,18 +3,20 @@ package humans;
 import paper.TestPaper;
 
 public class Teacher implements Humans {
-    private String indicate = "Teacher";
     private String name;
     private int phone;
     private final int id = count++;
     private int ClassID;
+    private TestPaper testPaper;
+    private TaskChat chat;
 
-    private static int count=0;
+    private static int count = 0;
 
-    private Teacher (Builder builder) {
+    protected Teacher (Builder builder) {
         this.name = builder.name;
         this.phone = builder.phone;
         this.ClassID = builder.ClassID;
+        this.chat = builder.chat;
     }
 
     public int getId() {
@@ -40,31 +42,60 @@ public class Teacher implements Humans {
         System.out.println();
     }
 
-    public String getIndicate() {
-        return indicate;
+    public TestPaper createTestPaper (String Theme, String Task){
+        this.testPaper = new TestPaper.Builder(name, ClassID).setTheme(Theme).setTasks(Task).build();
+        return testPaper;
     }
 
-    public TestPaper createTestPaper (String Theme, String Task){
-        TestPaper testPaper = new TestPaper.Builder(name, ClassID).setTheme(Theme).setTasks(Task).build();
+    public TestPaper getTestPaper() {
         return testPaper;
     }
 
     @Override
-    public void setTestPaper(TestPaper testPaper1) {
+    public void setTestPaper(TestPaper testPaper) {
     }
 
-    static class Builder{
+    @Override
+    public void action() {
+        System.out.println("Teacher " + name + ": \"I'm teaching!\"");
+    }
+
+    @Override
+    public void sendMessage(String message) {
+        chat.sendMessage(message,this);
+    }
+
+    @Override
+    public void getMessage(String message) {
+        System.out.println("Teacher " + name + " - " + "Homework: " + message);
+    }
+
+    static class Builder {
         private String name;
         private int phone;
         private int ClassID = -1;
+        private TaskChat chat = null;
 
-        public Builder (String name, int phone){
-            this.name = name;
-            this.phone = phone;
+        public Builder (){
+        }
+
+        public Builder setChat (TaskChat chat) {
+            this.chat = chat;
+            return this;
         }
 
         public Builder setClassID(int classID) {
             this.ClassID = classID;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setPhone(int phone) {
+            this.phone = phone;
             return this;
         }
 

@@ -3,25 +3,26 @@ package schoolclass;
 import equipment.Projector;
 import equipment.Remote;
 import humans.Humans;
+import humans.Teacher;
 
 import java.util.ArrayList;
 
 public class SchoolClass {
     private int numberOfStudents = 0;
     private Humans teacher = null;
-    private ArrayList <Humans> students = new ArrayList<>();
+    private final ArrayList <Humans> students = new ArrayList<>();
     private final int id = count++;
-    private Projector projector = new Projector();
-    private Remote projectorRemote = new Remote(projector);
+    private final Projector projector = new Projector();
+    private final Remote projectorRemote = new Remote(projector);
 
-    private static int count=0;
+    private static int count = 0;
 
     public void addStudent(Humans Student){
         students.add(Student);
         numberOfStudents++;
     }
 
-    public void setTeacher(Humans teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 

@@ -8,7 +8,7 @@ public class TestPaper implements Cloneable {
     private String Theme;
     private String Tasks;
 
-    private static int count=0;
+    private static int count = 0;
 
     public TestPaper(Builder builder) {
         this.teacherName = builder.teacherName;
@@ -34,6 +34,7 @@ public class TestPaper implements Cloneable {
             System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
         else
             System.out.println("\nTest\nTeacher:" + teacherName + "\nDuration: " + Duration + "\nClassID: " + ClassID + "\nTheme: " + Theme + "\nTasks:\n" + Tasks);
+        System.out.println();
     }
 
     public static class Builder{
