@@ -4,7 +4,7 @@
 
 - [Lab #1](#lab-1)
 - [Lab #2](#lab-2)
-- Lab #3 (not available for now)
+- [Lab #3](#lab-3)
 
 # Lab 1 
 # Creational Design Patterns
@@ -198,5 +198,182 @@ There is a Class called `PrincipalToTeacher` which, if it is needed can turn the
 ## Conclusions
 
 During this laboratory work there were learned and implemented some Structural Design Patterns. All the mentioned patterns from list of objectives were learned, but because it is difficult to unite them to one concept, there were implemented only three of them.
+
+## [Back To Title](#tmps-laboratory-works)
+
+# Lab 3
+# Behavioral Design Patterns
+
+### Author: Sorochin Nichita, FAF-191
+
+---
+
+## Introduction
+
+In this laboratory work were implemented behavioral design patterns, such as:
+- ### Mediator
+
+>Mediator helps in establishing loosely coupled communication between objects and helps in reducing the direct references to each other.
+
+![Mediator](https://res.cloudinary.com/practicaldev/image/fetch/s--STSJODRv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/sc4u7pmnldso23p9slio.gif)
+
+- ### Iterator
+
+>An iterator design pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
+![Iterator](https://russianblogs.com/images/736/cdc1fd6961e2d251725bc9fc3cf53000.gif)
+
+## Implementation
+
+The first pattern which was implemented is `Mediator`:
+
+For the Mediator pattern, it was created `Chat` Interface and the class which implements its: `Task Chat`.
+
+Additionally,  I have used a teacher and a student being the users of that chat.
+In order to create that chat, get and send methods where added in the `Humans` interface, which is implemented by `Student` and `Teachers` classes.
+The get and send methods where overridden in the `Teacher` and `Student` classes, in order to achieve that.
+
+Only the students and teachers who are present in the class, have access to their personal chat. For this reason, I added the chat in `Builder` class.
+When the class is created, only one unique chat is added for all the persons present in that class. If teacher sends the message, it will be received by all the students.
+Moreover, the teacher is able to get all the messages which are sent individually by the students.
+
+The next pattern which was used is `Iterator`:
+
+This is the pattern I used to make successive rounds of all students in the same class. Consequently, it was created `Iterator` and `Collection` interface, which is implemented by `StudentIterator` and `SchoolClass`.
+
+```java
+schoolClass.getTeacher().sendMessage("№1\n2+2=_\n№2 \n2*2=_");
+
+Iterator iterator = schoolClass.getIterator();
+while (iterator.hasNext()){
+    Student student = (Student) iterator.next();
+    student.sendMessage("№1 4 №2 4");
+}
+```
+
+## Results
+
+- ### Mediator (Chat, TaskChat) full code
+```java
+package humans;
+
+public interface Chat {
+    public void sendMessage(String message, Humans human);
+}
+```
+
+```java
+package humans;
+
+public class TaskChat implements Chat{
+    SchoolClass schoolClass;
+
+    public TaskChat(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
+    }
+
+    @Override
+    public void sendMessage(String message, Humans human) {
+        if (human.equals(schoolClass.getTeacher())){
+            for (Humans student: schoolClass.getStudents()){
+                student.getMessage(message);
+            }
+            return;
+        }
+        if(schoolClass.getStudents().contains(human)){
+            schoolClass.getTeacher().getMessage(message);
+            return;
+        }
+    }
+}
+```
+
+- ### Mediator (set and get method) 
+
+```java
+@Override
+public void sendMessage(String message) {
+    chat.sendMessage(message,this);
+}
+
+@Override
+public void getMessage(String message) {
+    System.out.println("Student " + name + " - " + "Solution:" + message);
+}
+```
+
+- ### Mediator (Method createClass after changing)
+
+```java
+public SchoolClass createClass (int numberOfStudents){
+
+        SchoolClass schoolClass = new SchoolClass();
+
+        schoolClass.setTeacher(new Teacher.Builder()
+                .setName(names[(int) (Math.random()*25)])
+                .setPhone((int) (Math.random()*999999999) + 10000000)
+                .setClassID(schoolClass.getId())
+                .setChat(schoolClass.getChat())
+                .build());
+
+        for (int i = 0; i < numberOfStudents; i++)
+            schoolClass.addStudent(new Student.Builder()
+                    .setName(names[(int) (Math.random()*25)])
+                    .setPhone((int) (Math.random()*999999999) + 10000000)
+                    .setClassID(schoolClass.getId())
+                    .setChat(schoolClass.getChat())
+                    .build());
+
+        students.addAll(schoolClass.getStudents());
+        teachers.add(schoolClass.getTeacher());
+
+        return schoolClass;
+    }
+```
+
+- ### Iterator (Iterator, Collection, StudentIterator) full code
+
+```java
+public interface Iterator {
+    public boolean hasNext();
+    public Humans next();
+}
+```
+```java
+public interface Collection {
+    Iterator getIterator();
+}
+```
+```java
+private class StudentIterator implements Iterator
+{
+    int index;
+
+    @Override
+    public boolean hasNext() {
+        if (index < students.size()) return true;
+        return false;
+    }
+
+    @Override
+    public Humans next() {
+        return students.get(index++);
+    }
+}
+```
+- ### Iterator (Override method in SchoolClass) 
+```java
+ @Override
+public Iterator getIterator() {
+    return new StudentIterator();
+}
+```
+- ### Partial output in the command line
+
+![output](https://sun9-83.userapi.com/impg/MNUy3Lq3eSsui-KQL0zIqhaIBQ2yxPBg-GVFrg/ey21ENmBd7c.jpg?size=435x548&quality=96&sign=8a2e8bada66c94b8b3df2e82363b4cce&type=album)
+![output](https://sun9-50.userapi.com/impg/l4NHKdKx-iLPGCpvJKw855ykODrXIl_s6s0wiQ/MxlD_WzcTm8.jpg?size=483x336&quality=96&sign=057e21a1dc80d98e2f9b23b5d336f3ab&type=album)
+## Conclusions
+
+During this laboratory work there were learned and implemented some Structural Design Patterns.
 
 ## [Back To Title](#tmps-laboratory-works)
